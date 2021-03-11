@@ -1,0 +1,222 @@
+{
+	"variables": [],
+	"info": {
+		"name": "VideoStore",
+		"_postman_id": "9fdca6d8-03c7-c85d-90b5-aa6e94d67fd3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"description": "",
+			"item": [
+				{
+					"name": "getCustomers",
+					"request": {
+						"url": "http://localhost:3000/api/v1/customers",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Getting all the users in the DB."
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomer",
+					"request": {
+						"url": "http://localhost:3000/api/v1/customers/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get a single user from DB"
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"url": "http://localhost:3000/api/v1/customers",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"Ronja Bengtsson\",\n  \"email\":\"Ronja@example.com\",\n  \"points\":\"50\"\n}"
+						},
+						"description": "Creating a new user in DB."
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"url": "http://localhost:3000/api/v1/users/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "Deleting a user from the DB."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"description": "",
+			"item": [
+				{
+					"name": "getMovies",
+					"request": {
+						"url": "http://localhost:3000/api/v1/movies",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Getting all the users in the DB."
+					},
+					"response": []
+				},
+				{
+					"name": "createMovie",
+					"request": {
+						"url": "http://localhost:3000/api/v1/movies",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\":\"The Matrix Revalutions\",\n  \"category\":\"NEW\",\n  \"points\":\"20\",\n  \"price\":\"200\"\n}"
+						},
+						"description": "Creating a new user in DB."
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMovie",
+					"request": {
+						"url": "http://localhost:3000/api/v1/movies/7",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "Deleting a user from the DB."
+					},
+					"response": []
+				},
+				{
+					"name": "updateMovie",
+					"request": {
+						"url": "http://localhost:3000/api/v1/movies/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\":\"NEW\",\n  \"points\":\"20\",\n  \"price\":\"200\"\n}"
+						},
+						"description": "Updateing the category of a movie"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"description": "",
+			"item": [
+				{
+					"name": "createOrder",
+					"request": {
+						"url": "http://localhost:3000/api/v1/orders",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customer_id\":\"4\",\n  \"movie_id\":\"4\",\n  \"total_price\":\"200\"\n}"
+						},
+						"description": "Creating a new user in DB."
+					},
+					"response": []
+				},
+				{
+					"name": "getOrder",
+					"request": {
+						"url": "http://localhost:3000/api/v1/orders",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Getting all the users in the DB."
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"url": "http://localhost:3000/api/v1/purchases/5",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "Deleting a user from the DB."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"description": "",
+			"item": [
+				{
+					"name": "createInvoice",
+					"request": {
+						"url": "http://localhost:3000/api/v1/invoices",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"totalPoints\":\"50\",\n  \"totalPrice\":\"200\",\n  \"customer_id\":\"1\",\n  \"movie_id\":\"1\",\n  \"order_id\":\"1\"\n}"
+						},
+						"description": "Creating a new user in DB."
+					},
+					"response": []
+				},
+				{
+					"name": "getInvoice",
+					"request": {
+						"url": "http://localhost:3000/api/v1/invoices",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get a single user from DB"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
