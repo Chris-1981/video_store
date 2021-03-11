@@ -5,7 +5,7 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.string :category
       t.integer :points
       t.integer :price
-
+      
       t.timestamps
     end
   end

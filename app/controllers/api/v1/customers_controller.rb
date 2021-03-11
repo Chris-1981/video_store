@@ -6,7 +6,7 @@ class Api::V1::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
-    render json: {status:'SUCCESS', message:'Loaded successfully.', data:@customer}, status: :ok
+    render json: {status:'SUCCESS', message:'Loaded successfully.', data:@customer, Movie: @movie}, status: :ok
   end
 
   def create

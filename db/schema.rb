@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_091628) do
+ActiveRecord::Schema.define(version: 2021_03_10_071324) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 2021_03_09_091628) do
   create_table "invoices", force: :cascade do |t|
     t.integer "totalPrice"
     t.integer "totalPoints"
+    t.integer "customer_id"
+    t.integer "order_id"
+    t.integer "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "customer_id"
-    t.integer "purchase_id"
-    t.integer "movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -39,11 +39,12 @@ ActiveRecord::Schema.define(version: 2021_03_09_091628) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "purchases", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "orders", force: :cascade do |t|
+    t.integer "total_price"
     t.integer "customer_id"
     t.integer "movie_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

@@ -1,3 +1,3 @@
 class Invoice < ApplicationRecord
-  has_many :purshase
+  has_many :order
 end
